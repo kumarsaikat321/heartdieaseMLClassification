@@ -33,11 +33,34 @@ st.set_page_config(
 
 # Custom CSS
 st.markdown("""
-    <style>
-    .main {padding: 0rem 1rem;}
-    .stMetric {background-color: #f0f2f6; padding: 10px; border-radius: 5px;}
-    </style>
-    """, unsafe_allow_html=True)
+<style>
+
+/* Main padding */
+.main {padding: 0rem 1rem;}
+
+/* Metric card background */
+div[data-testid="stMetric"] {
+    background: linear-gradient(135deg, #1e3a8a, #0f172a); !important;  /* Dark Blue */
+    border: 1px solid #334155;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+/* Metric label */
+div[data-testid="stMetricLabel"] {
+    color: #94a3b8 !important;
+    font-weight: 600;
+}
+
+/* Metric value */
+div[data-testid="stMetricValue"] {
+    color: #22c55e !important;  /* Green numbers */
+    font-size: 28px;
+    font-weight: bold;
+}
+
+</style>
+""", unsafe_allow_html=True)
 
 # ============================================================================
 # TITLE
