@@ -75,21 +75,30 @@ MODEL_FILES = {
 @st.cache_resource
 def load_models():
     models = {}
+
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
     for model_name, filename in MODEL_FILES.items():
-        try:
-            with open(filename, 'rb') as f:
-                models[model_name] = pickle.load(f)
-        except FileNotFoundError:
+        model_path = os.path.join(BASE_DIR, filename)
+
+        if not os.path.exists(model_path):
             st.error(f"Model file not found: {filename}")
+            st.write("Current directory files:", os.listdir(BASE_DIR))
             return None
-    
-    try:
-        with open('scaler.pkl', 'rb') as f:
-            scaler = pickle.load(f)
-    except FileNotFoundError:
+
+        with open(model_path, 'rb') as f:
+            models[model_name] = pickle.load(f)
+
+    scaler_path = os.path.join(BASE_DIR, 'scaler.pkl')
+
+    if not os.path.exists(scaler_path):
         st.error("Scaler file not found!")
+        st.write("Current directory files:", os.listdir(BASE_DIR))
         return None
-    
+
+    with open(scaler_path, 'rb') as f:
+        scaler = pickle.load(f)
+
     return models, scaler
 
 # ============================================================================
