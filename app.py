@@ -60,12 +60,12 @@ st.sidebar.markdown("### Upload Test Dataset")
 uploaded_file = st.sidebar.file_uploader("Choose CSV file", type=['csv'])
 
 MODEL_FILES = {
-    'model_logistic_regression.pkl',
-    'model_decision_tree.pkl',
-    'model_knn.pkl',
-    'model_naive_bayes.pkl',
-    'model_random_forest.pkl',
-    'model_xgboost.pkl'
+    'Logistic Regression': 'model_logistic_regression.pkl',
+    'Decision Tree': 'model_decision_tree.pkl',
+    'KNN': 'model_knn.pkl',
+    'Naive Bayes': 'model_naive_bayes.pkl',
+    'Random Forest': 'model_random_forest.pkl',
+    'XGBoost': 'model_xgboost.pkl'
 }
 
 # ============================================================================
