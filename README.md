@@ -279,8 +279,8 @@ The high performance across all models (>84% accuracy) demonstrates that the sel
 
 This project was developed as part of Machine Learning Assignment 2 for BITS Pilani M.Tech (AIML/DSE) program. All code is original work with proper attribution to libraries and frameworks used.
 
-**Student**: [Your Name]  
-**Roll Number**: [Your Roll Number]  
+**Student**: Saikat Kumar Mallick  
+**Roll Number**: 2025aa05556
 **Date**: February 15, 2026
 
 ---
